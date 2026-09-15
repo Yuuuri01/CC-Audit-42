@@ -6,14 +6,16 @@ import subprocess
 from colors import colors
 
 """part norminette C_files and header_files"""
-def run_norm_CF(file_path) ->None:
+def run_norm_CF(file_path) ->int:
     try:
         cmd: list = ["norminette", file_path]
         out: subprocess.CompletedProcess[str] = subprocess.run(cmd, capture_output=True, text=True)
         if out.returncode == 0:
             print(f"    {colors.GREEN}{colors.BOLD}.{out.stdout}{colors.RESET}")
+            return 1
         else:
             print(f"    {colors.RED}{colors.BOLD}.{out.stdout}{colors.RESET}")
+            return 0
 
     except:
         print(f"error: command not found: 'norminette'")

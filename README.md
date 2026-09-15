@@ -9,10 +9,6 @@
 </div>
 
 ---
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Yuuuri01/READMENOW/main/CC-Audit-42-linkedin.png" alt="CC-Audit Banner" width="100%">
-</p>
-
 
 ## 📖 Overview
 
