@@ -70,7 +70,7 @@ pip install norminette
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/CC-auto.git](https://github.com/Yuuuri01/CC-Audit-42.git CC-Audit-42)
+   git clone https://github.com/Yuuuri01/CC-Audit-42.git CC-Audit-42
    cd CC-Audit-42
    ```
 
