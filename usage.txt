@@ -1,0 +1,29 @@
+============================================================
+  1337 Project Auditor (CLI Tool)
+============================================================
+
+DESCRIPTION:
+  A custom automation tool designed for Common Core students 
+  to audit C source files against 1337 coding standards, 
+  syntax flags, and memory checks.
+
+USAGE:
+  python3 audit.py [OPTIONS] [PATH]
+
+Options:
+  -h, --help		  Show this help manual and exit.
+  -f, --file <file.c>     Audit a single C source file (.c) or header (.h).
+  -d, --dir <dir_path>    Audit a full directory with norminette.
+  -s, --syntax <dir/file> Run gcc syntax-only audit recursively on a directory.
+  -l, --check-all <dir>   Run both full syntax check and norminette audit on a directory.
+
+Examples:
+  ->python3 audit.py -f ft_strlen.c
+  ->python3 audit.py -d C05
+  ->python3 audit.py -s C05 OR python3 main.py -s C00/ft_putchar.c
+  ->python3 audit.py -l C05
+
+AUTHOR:
+	-by: Youri-01
+ 	-Built by 1337 Student, for 1337 Students.
+============================================================
