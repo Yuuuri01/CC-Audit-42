@@ -10,6 +10,10 @@
 
 ---
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Yuuuri01/READMENOW/main/CC-Audit-42-linkedin.png" alt="CC-Audit Banner" width="100%">
+</p>
+
 ## 📖 Overview
 
 **CC-auto** is a professional-grade, modular C audit CLI tool explicitly designed for 1337 and 42 Network students. It significantly streamlines the workflow by automating syntax validation and norm enforcement for C projects. 
