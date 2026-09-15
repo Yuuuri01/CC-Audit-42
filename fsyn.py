@@ -21,7 +21,7 @@ def run_norm_CF(file_path) ->int:
         print(f"error: command not found: 'norminette'")
         print("see manual below")
 
-def run_norm_HF(file_path) ->None:
+def run_norm_HF(file_path) ->int:
 
     try:
         cmd: list = ["norminette", "-R", "CheckForbiddenSourceHeader", file_path]
@@ -30,8 +30,10 @@ def run_norm_HF(file_path) ->None:
         if run_norm.returncode == 0:
             print(f"{colors.GREEN}|{colors.RESET}")
             print(F"{run_norm.stdout}")
+            return 1
         else:
             print(f"{colors.RED}---->{colors.RESET}{run_norm.stdout}")
+            return 0
     except:
         print(f"error: command not found: 'norminette'")
         print("see manual below")
