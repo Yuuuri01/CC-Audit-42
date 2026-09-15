@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🚀 CC-auto</h1>
+  <h1>🚀 CC-AUDIT-42</h1>
   <p><strong>A Lightweight & Modular C Audit CLI Tool</strong></p>
   
   ![Python](https://img.shields.io/badge/Language-Python_3-yellow.svg)
@@ -70,49 +70,49 @@ pip install norminette
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/CC-auto.git
-   cd CC-auto
+   git clone [https://github.com/YOUR_USERNAME/CC-auto.git](https://github.com/Yuuuri01/CC-Audit-42.git CC-Audit-42)
+   cd CC-Audit-42
    ```
 
 2. **Make the script executable:**
    ```bash
-   chmod +x main.py
+   chmod +x audit.py
    ```
 
 3. **Run a basic audit:**
    *(Ensure your virtual environment is active if you used one)*
    ```bash
-   ./main.py [OPTION] [PATH]
+   ./audit.py [OPTION] [PATH]
    ```
 
 ### Options & Manual
 
 | Option | Description | Example |
 | :--- | :--- | :--- |
-| `-h`, `--help` | Show the help manual | `./main.py -h` |
-| `-f`, `--file` | Audit a single `.c` or `.h` file | `./main.py -f C05/ft_strlen.c` |
-| `-d`, `--dir` | Run Norminette audit on a directory | `./main.py -d C05` |
-| `-s`, `--syntax` | Run recursive syntax check on a directory | `./main.py -s C05` |
-| `--check-all` | Run both syntax check & norminette audit | `./main.py --check-all C05` |
+| `-h`, `--help` | Show the help manual | `./audit.py -h` |
+| `-f`, `--file` | Audit a single `.c` or `.h` file | `./audit.py -f C05/ft_strlen.c` |
+| `-d`, `--dir` | Run Norminette audit on a directory | `./audit.py -d C05` |
+| `-s`, `--syntax` | Run recursive syntax check on a directory | `./audit.py -s C05` |
+| `--check-all` | Run both syntax check & norminette audit | `./audit.py --check-all C05` |
 
 ## 🌍 Adding the Tool to your System `PATH` (Global Command)
 
-To run `CC-auto` from any directory in your terminal like a real system command:
+To run `CC-Audit-42` from any directory in your terminal like a real system command:
 
 1. **Create a symbolic link** to a directory in your system's `PATH` (e.g., `~/.local/bin`):
    ```bash
    mkdir -p ~/.local/bin
-   ln -s "$(pwd)/main.py" ~/.local/bin/cc-auto
+   ln -s "$(pwd)/main.py" ~/.local/bin/CC-Audit-42
    ```
    *(Ensure `~/.local/bin` is in your `~/.bashrc` or `~/.zshrc` via `export PATH="$HOME/.local/bin:$PATH"`)*
 
 2. **Run it globally:**
    ```bash
-   cc-auto --check-all C05
+   python3 audit.py --check-all C05
    ```
 
 ## 👨‍💻 Author
-
+--> (youri-01)
 Built with ❤️ by **Hamza Mossaid** (1337 / 42 Network Student).
 Focusing on low-level C programming, algorithm optimization, and automation tools.
 
