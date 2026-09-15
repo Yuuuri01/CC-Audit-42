@@ -26,7 +26,7 @@ Instead of manually checking each file, CC-auto traverses directories, validates
 
 ## 🧠 Under the Hood
 
-The architecture of CC-auto relies on Python's standard library to ensure robust execution and system interaction:
+The architecture of CC-Audit-42 relies on Python's standard library to ensure robust execution and system interaction:
 *   **Process Management**: Employs `subprocess.run` with `shell=True` to seamlessly allow wildcard expansion (`*/*`) for bulk file processing.
 *   **Efficient Traversal**: Utilizes `os.scandir` for rapid, recursive directory exploration.
 *   **Error Handling**: Intelligently redirects `stderr` to capture syntax warnings and compilation errors directly from `gcc`, ensuring they are displayed correctly to the user.
