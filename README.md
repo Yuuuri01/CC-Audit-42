@@ -102,7 +102,7 @@ To run `CC-Audit-42` from any directory in your terminal like a real system comm
 1. **Create a symbolic link** to a directory in your system's `PATH` (e.g., `~/.local/bin`):
    ```bash
    mkdir -p ~/.local/bin
-   ln -s "$(pwd)/main.py" ~/.local/bin/CC-Audit-42
+   ln -s "$(pwd)/audit.py" ~/.local/bin/CC-Audit-42
    ```
    *(Ensure `~/.local/bin` is in your `~/.bashrc` or `~/.zshrc` via `export PATH="$HOME/.local/bin:$PATH"`)*
 
