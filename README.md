@@ -97,7 +97,7 @@ pip install norminette
 | `-f`, `--file` | Audit a single `.c` or `.h` file | `./audit.py -f C05/ft_strlen.c` |
 | `-d`, `--dir` | Run Norminette audit on a directory | `./audit.py -d C05` |
 | `-s`, `--syntax` | Run recursive syntax check on a directory | `./audit.py -s C05` |
-| `--check-all` | Run both syntax check & norminette audit | `./audit.py --check-all C05` |
+| `-l`, `--check-all` | Run both syntax check & norminette audit | `./audit.py --check-all C05` |
 
 ## 🌍 Adding the Tool to your System `PATH` (Global Command)
 
