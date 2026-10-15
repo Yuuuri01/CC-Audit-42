@@ -1,27 +1,33 @@
 #!/usr/bin/env python3
-
+import glob
 import fsyn
 from fsyn import *
 from colors import colors
 
-def check_syntax(name_dir) ->None:
+
+############FIX the syntax checker########################
+
+def check_syntax(path) -> None:
+    if os.path.isfile(path):
+        files = [path]
+    else:
+        files = glob.glob(os.path.join(path, "**", "*.c"), recursive=True)
+
+    if not files:
+        print(f"{colors.YELLOW}no .c files found{colors.RESET}")
+        return
+
+    cmd = ["cc", "-Wall", "-Wextra", "-Werror", "-fsyntax-only", *files]
     try:
-        if os.path.isfile(name_dir):
-            cmd  = f"cc -Wall -Wextra -Werror -fsyntax-only {name_dir} */*"
-            out = subprocess.run(cmd, shell=True, capture_output=True, text=True)
-            if out.returncode == 0:
-                print(f"{colors.GREEN}<EVERYTHING IS OKEY!>{colors.RESET}")
-            else:
-                print(f"{out.stderr}")
-        else:
-            cmd = f"cc -Wall -Wextra -Werror -fsyntax-only {name_dir}/*/*"
-            out = subprocess.run(cmd, shell=True, capture_output=True, text=True)
-            if out.returncode == 0:
-                print(f"{colors.GREEN}<EVERYTHING IS OKEY!>{colors.RESET}")
-            else:
-                print(f"{out.stderr}")
-    except:
-        print("something wrong!")
+        out = subprocess.run(cmd, capture_output=True, text=True)
+    except FileNotFoundError:
+        print("error: 'cc' compiler not found")
+        return
+
+    if out.returncode == 0:
+        print(f"{colors.GREEN}<EVERYTHING IS OKEY!>{colors.RESET}")
+    else:
+        print(out.stderr)
 
 def main() ->None:
     files_count: int = 0
