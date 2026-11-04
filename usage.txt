@@ -1,29 +1,60 @@
 ============================================================
-  1337 Project Auditor (CLI Tool)
+  CC-Audit-42 | 1337 Project Auditor (CLI Tool)
 ============================================================
 
 DESCRIPTION:
-  A custom automation tool designed for Common Core students 
-  to audit C source files against 1337 coding standards, 
-  syntax flags, and memory checks.
+  A custom automation tool designed for Common Core students
+  to audit C source files against 1337 coding standards,
+  syntax flags, and to run the libft / ft_printf /
+  get_next_line testers (with memory checks) in one command.
 
 USAGE:
-  python3 audit.py [OPTIONS] [PATH]
+  ./audit.py OPTION PATH
+  (or: python3 audit.py OPTION PATH)
+
+  An OPTION is always required before the PATH.
 
 Options:
-  -h, --help		  Show this help manual and exit.
-  -f, --file <file.c>     Audit a single C source file (.c) or header (.h).
-  -d, --dir <dir_path>    Audit a full directory with norminette.
-  -s, --syntax <dir/file> Run gcc syntax-only audit recursively on a directory.
-  -l, --check-all <dir>   Run both full syntax check and norminette audit on a directory.
+  -h, --help                Show this help manual and exit.
+  -f, --file <file>         Audit a single C source file (.c) or header (.h).
+  -d, --dir <dir_path>      Audit a full directory with norminette.
+  -s, --syntax <dir/file>   Run gcc syntax-only audit recursively on a directory.
+  -l, --check-all <dir>     Run both full syntax check and norminette audit on a directory.
+
+Testers:
+  --libft <project_dir>     Run the libft tester on your project.
+  --printf <project_dir>    Run the ft_printf tester on your project.
+  --gnl <project_dir>       Run the get_next_line tester on your project.
+  --only <tests...>         Run only some tests (after a tester option).
+
+  <project_dir> is the folder that contains your Makefile and sources.
+  --libft   needs a Makefile that builds libft.a
+  --printf  needs a Makefile that builds libftprintf.a
+  --gnl     needs get_next_line.c, get_next_line_utils.c, get_next_line.h
+
+  Tester names for --only are written without "ft_" and without ".c":
+    strlen   ->  tests your ft_strlen
+    split    ->  tests your ft_split
+  For printf: c s p d i u x upperx percent mix (+ bonus flags)
 
 Examples:
-  ->python3 audit.py -f ft_strlen.c
-  ->python3 audit.py -d C05
-  ->python3 audit.py -s C05 OR python3 main.py -s C00/ft_putchar.c
-  ->python3 audit.py -l C05
+  ->./audit.py -f ft_strlen.c
+  ->./audit.py -d C05
+  ->./audit.py -s C05  OR  ./audit.py -s C00/ft_putchar.c
+  ->./audit.py -l C05
+  ->./audit.py --libft ~/libft
+  ->./audit.py --libft ~/libft --only strlen split
+  ->./audit.py --printf ~/ft_printf --only c s
+  ->./audit.py --gnl ~/get_next_line
+
+Requirements:
+  python3, gcc/cc, norminette
+  For the testers: make, clang++, valgrind
+
+Exit code: 0 if everything is OK, 1 if errors are found.
 
 AUTHOR:
 	-by: Youri-01
  	-Built by 1337 Student, for 1337 Students.
+	-Testers belong to their original authors (see README).
 ============================================================
